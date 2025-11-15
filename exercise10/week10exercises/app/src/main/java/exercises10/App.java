@@ -1,4 +1,4 @@
-package exercises07;
+package exercises10;
 
 public class App {
     public String getGreeting() {
