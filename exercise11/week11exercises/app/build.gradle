@@ -30,6 +30,16 @@ java {
     }
 }
 
+// Include non-standard resource folder so files placed under
+// src/main/java/resources will be available on the runtime classpath.
+sourceSets {
+    main {
+        resources {
+            srcDir 'src/main/java/resources'
+        }
+    }
+}
+
 application {
     // Define the main class for the application.
     // Requires at least Gradle 7.1.1

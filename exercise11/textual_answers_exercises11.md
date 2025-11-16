@@ -11,6 +11,9 @@ Parallel                         461166.8 ns    5313.02       1024
 ParallelStream                   446384.8 ns    1364.39       1024
 ```
 
+## Exercise 11.2
+In TestWordStream.java
+
 ## Exercise 11.3
 
 ### Exercise 11.3.1
