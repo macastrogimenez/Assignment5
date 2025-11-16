@@ -43,6 +43,8 @@ Larger arrays achieve slightly better speed-ups because the parallelizable porti
 
 # Exercise 10.3
 
+Note: the executer version of the code can be found after the commented out version in TestCountPrimesThreads.java
+
 ## 10.3.1
 
 countSequential 1923746.2 ns 8064.95 256
