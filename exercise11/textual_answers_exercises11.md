@@ -269,3 +269,20 @@ The output of `Java8ParallelStreamMain.java` on a more time-consuming task is sa
 I modified `Java8ParallelStreamMain.java`, so that it would take an array of 500 ints, check every single one and print if it is a primer or not.
 
 In this case, as in 11.3.2 main does a tiny fraction of the workload, plus spawning and scheduling while the bulk of it is performed by all the other threads (9). Worker 8 and 9 do a smaller part of the workload - processing about 30 ints each instead of around 60 as the other cores do, probably because these are the workers corresponding to the smaller efficiency cores of my laptop.
+
+## Exercise 11.4
+
+### Exercise 11.4.2
+
+When the below java stream code runs `source()` would retrieve the data from the file and filter every word 
+based on its length, if if the length is larger than 5 it will be absorbed.
+
+```JavaStream
+source().filter(w -> w.length() > 5).sink();
+```
+
+However, in the case of RxJava below, the Observable will push the data over to the Observers (subscribers) which will then all words they have capacity for (since some may be disposed/ lost in the case of backpressure - when the Observable pushes more data than the consumer can consume), filter them and absorb them.
+
+```RxJava
+source().filter(w -> w.length() > 10).sink()
+```
