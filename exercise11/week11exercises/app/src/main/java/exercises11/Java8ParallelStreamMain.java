@@ -14,7 +14,7 @@ public class Java8ParallelStreamMain {
         
         // for exercise 11.3.2
         /* */
-        int range = 10000; // changed from 100 to 500 for exercise 11.3.3
+        int range = 10000; // changed from 100 to 10000 for exercise 11.3.3
         int[] array = new int[range];
         for (int i = 0; i < array.length; i++) {
             array[i]=i;
@@ -35,6 +35,8 @@ public class Java8ParallelStreamMain {
 		IntStream intParallelStream=Arrays.stream(array).parallel();
 		intParallelStream.forEach(s->
 		{
+            //System.out.println(s+" "+Thread.currentThread().getName());
+            // For exercise 11.3.3
 			System.out.println(s+" is prime: "+PrimeCountingPerf.isPrime(s)+" "+Thread.currentThread().getName());
 		}
 				);
