@@ -1,5 +1,4 @@
-//Exercise 10.?
-//JSt vers Aug 20, 2025
+
 
 package exercises11;
 
