@@ -283,7 +283,7 @@ based on its length, if if the length is larger than 5 it will be absorbed.
 source().filter(w -> w.length() > 5).sink();
 ```
 
-However, in the case of RxJava below, the Observable will push the data over to the Observers (subscribers) which will then all words they have capacity for (since some may be disposed/ lost in the case of backpressure - when the Observable pushes more data than the consumer can consume), filter them and absorb them.
+However, in the case of RxJava below, the Observable will push the data over to the Observers (subscribers) which will then all words they have capacity for (since some may be disposed/ lost in the case of backpressure - when the Observable pushes more data than the consumer can consume), filter them (length larger than 10) and absorb them.
 
 ```RxJava
 source().filter(w -> w.length() > 10).sink()
