@@ -9,7 +9,7 @@ import benchmarking.Benchmark;
 class PrimeCountingPerf { 
   public static void main(String[] args) {
     new PrimeCountingPerf(); 
-    
+
     //System.out.println(countIntStream(range));
     //System.out.println(countSequential(range));
     //System.out.println(countParallel(range));
@@ -25,7 +25,7 @@ class PrimeCountingPerf {
   static final int range= 100000;
 
   //Test whether n is a prime number
-  private static boolean isPrime(int n) {
+  public static boolean isPrime(int n) {
     int k= 2;
     while (k * k <= n && n % k != 0)
       k++;

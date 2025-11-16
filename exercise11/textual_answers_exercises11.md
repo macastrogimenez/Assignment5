@@ -51,8 +51,7 @@ resources forking, coordinating and joining the different streams than actually 
 
 ### Exercise 11.3.2
 
-I increased the number of ints in the array to 100 and this resulted in a more predictable outcome: main still did a good part of the work at the beginning, however, it spawned up to 9 workers (as it can be seen below) who did the bulk of the work, and this makes perfect sense since my laptop
-has 10 cores, probably with a higher number of ints it would have used all 10.
+I increased the number of ints in the array to 100 and this resulted in a more predictable outcome: main still did a good part of the work at the beginning, however, it spawned up to 9 workers (as it can be seen below) who did the bulk of the work, and this makes perfect sense since my laptop has 10 cores (9 workers + main).
 
 ```bash
 =================================
@@ -262,3 +261,11 @@ Using Parallel Stream
 80 main
 86 ForkJoinPool.commonPool-worker-2
 ```
+
+### Exercise 11.3.3
+
+The output of `Java8ParallelStreamMain.java` on a more time-consuming task is saved in this same folder on `Java8ParallelStreamMainPrimes.txt`
+
+I modified `Java8ParallelStreamMain.java`, so that it would take an array of 500 ints, check every single one and print if it is a primer or not.
+
+In this case, as in 11.3.2 main does a tiny fraction of the workload, plus spawning and scheduling while the bulk of it is performed by all the other threads (9). Worker 8 and 9 do a smaller part of the workload - processing about 30 ints each instead of around 60 as the other cores do, probably because these are the workers corresponding to the smaller efficiency cores of my laptop.
