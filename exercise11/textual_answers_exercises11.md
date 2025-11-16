@@ -277,6 +277,21 @@ Also tried running `PerformanceComparisonMain.java` (as per the article "Introdu
 
 ## Exercise 11.4
 
+### Exercise 11.4.1
+- Java Stream
+
+In Java Streams, the behavior depends on the terminal operation.
+Streams are lazy, so if no terminal operation is invoked, nothing will actually happen.
+
+Once a terminal operation exists, each word in the stream is processed once: it flows through the filter and then continues to the terminal sink.
+
+- RxJava
+
+RxJava is reactive, meaning the flow is push-based.
+Whenever the source emits a new word, the filter operator is applied immediately, and if the word passes the filter, it is pushed downstream to the observer.
+
+The sink does not pull data—it simply reacts to each new emission.
+
 ### Exercise 11.4.2
 
 When the below java stream code runs `source()` would retrieve the data from the file and filter every word 
